@@ -7,6 +7,10 @@ def gradientOfLeastSquaresError(m: float, b: float, x: ndarray, y: ndarray) -> n
     #returns [partial w/ respect to m(m, b), partial w/ respect to b(m, b) ]
     return np.array([pd.partialDerivaitiveWithRespectToSlope(m, b, x, y), pd.partialDerivaitiveWithRespectToYIntercept(m, b, x, y)])
 
+
+def numericGradient(m: float, b: float, x: ndarray, y: ndarray) -> ndarray:
+    return np.array([pd.numericPartialSlope(m, b, x, y), pd.numericPartialYIntercept(m, b, x, y)])
+
 def isNotZeroVector(v: ndarray) -> bool:
     #if gradient is near zero vector, we want to stop descending. 
     if np.any(v):
