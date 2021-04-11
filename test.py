@@ -14,5 +14,5 @@ print([x, y])
 print([pSlope, pIntercept])
 print([type(pSlope), type(pIntercept)])
 print(reg.gradientOfLeastSquaresError(m, b, x, y))#seems the second one is incorrect
-print(reg.numericGradient(m, b, x, y))
+print(reg.numericGradient(m, b, x, y))#mbe just use numeric. 
 print(reg.leastSquaresRegressionLine(x, y))

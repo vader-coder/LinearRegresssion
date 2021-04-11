@@ -23,12 +23,13 @@ def leastSquaresRegressionLine(x: ndarray, y: ndarray) -> ndarray:
     stepSize = 0.001
     slope = v[0][0]
     intercept = v[0][1]
-    gradient = gradientOfLeastSquaresError(slope, intercept, x, y)
+    # gradientOfLeastSquaresError(slope, intercept, x, y)
+    gradient = numericGradient(slope, intercept, x, y)
     counter = 0
-    while (isNotZeroVector(gradient) and counter < 5):
+    while (isNotZeroVector(gradient) and counter < 100000):
         slope = v[0][0]
         intercept = v[0][1]
-        v = v - stepSize*gradientOfLeastSquaresError(slope, intercept, x, y)
+        v = v - stepSize*numericGradient(slope, intercept, x, y)
         counter += 1
     return v
 
